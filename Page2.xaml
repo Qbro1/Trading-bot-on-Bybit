@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BybitApp1.Page2"
+             Title="Trade">
+
+
+    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+
+        <Label Text="Пара: XRPUSDT" FontSize="20" HorizontalOptions="Center"/>
+        <Label Text="Стратегия: Impulse Breakout" TextColor="Gray" HorizontalOptions="Center"/>
+
+        <Button Text="{Binding ButtonText}"
+                Command="{Binding ToggleBotCommand}"
+                BackgroundColor="{Binding ButtonColor}"
+                TextColor="White"
+                HeightRequest="80"
+                FontSize="22"
+                FontAttributes="Bold"
+                CornerRadius="15"/>
+
+
+    
+
+    
+
+        
+
+        <Label Text="ЛОГИ РАБОТЫ:" FontAttributes="Bold" Margin="0,20,0,5" HorizontalOptions="Center"/>
+        <Frame BackgroundColor="#1E1E1E" HeightRequest="200" CornerRadius="10" Padding="5">
+            <CollectionView ItemsSource="{Binding BotLogs}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}" 
+                       TextColor="Lime" 
+                       FontSize="12" 
+                       FontFamily="Monospace" 
+                       Margin="5,2"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+
+    </VerticalStackLayout>
+
+</ContentPage>
