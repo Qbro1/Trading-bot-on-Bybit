@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BybitApp1.MainPage">
+
+    
+
+
+    
+
+    <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+        
+        <Label HorizontalOptions="Center" Text="{Binding Message}" />
+
+        
+        <Label Text="BYBIT BOT " 
+               FontSize="18" 
+               HorizontalOptions="Center" />
+
+        
+        
+        <Label Text="{Binding Balance}" 
+               FontSize="32" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" 
+               HorizontalTextAlignment="Center"/>
+        
+
+        <Button HorizontalOptions="Start" 
+                Text="Внимание" 
+                Command="{Binding BtnTextCommand}"/>
+        
+        
+        <Button Text="ОБНОВИТЬ БАЛАНС" 
+                Command="{Binding GetBalanceCommand}"
+                HeightRequest="60"
+                BackgroundColor="DarkSlateBlue"
+                CornerRadius="10"
+                HorizontalOptions="Start"/>
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Gold" />
+    </VerticalStackLayout>
+
+
+
+</ContentPage>
